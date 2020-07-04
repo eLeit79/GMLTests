@@ -1,26 +1,34 @@
 function testMaths() {
-	out("[MATHS TESTS]");
-
 	testFactorial();
 	testFibonacci();
-
-	out("[MATHS TESTS]");
+	
 	out("");
 }
 
 function testFactorial() {
-	var f = factorial(5);
-	out("Factorial of 5: " + string(f) + " (recursion test)");
+	var actual = factorial(3);
+	var expected = 6;
+	out("[TEST:Factorial(3)] " + assertEquals(expected, actual).message);
+
+	actual = factorial(5);
+	expected = 120;
+	out("[TEST:Factorial(5)] " + assertEquals(expected, actual).message);
+
+	actual = factorial(8);
+	expected = 40320;
+	out("[TEST:Factorial(8)] " + assertEquals(expected, actual).message);
 }
 
 function testFibonacci() {
-	var fib = "";
+	var actual = "";
 	for (var i = 0; i < 15; i++) {
 		if (i > 0) {
-			fib += ", ";
+			actual += ", ";
 		}
 		
-		fib += string(fibonacci(i))
+		actual += string(fibonacci(i))
 	}
-	out("Fibonacci sequence: " + fib);
+	var expected = "0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377";
+	
+	out("[TEST:Fibonacci] " + assertEquals(expected, actual).message);
 }
