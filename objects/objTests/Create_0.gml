@@ -10,3 +10,5 @@ out("ALL DONE!");
 out("");
 
 game_end();
+
+// This is a test!
