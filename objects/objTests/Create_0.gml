@@ -4,8 +4,9 @@ out("");
 
 testStructs();
 testMaths();
+testStrings();
+testVectors();
 
-out("");
 out("ALL DONE!");
 out("");
 
